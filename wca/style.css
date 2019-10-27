@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+html,body{
+    background:#1d1d1d;
+    padding:0;
+    margin:0;
+    height:100%;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+.toolbar{
+    color:#9e9e9e;
+}
+.flex-wrap{
+    display: flex;
+    flex-flow:column;
+    height:100%;
+}
+
+.row-flex{
+    display:flex;
+    flex-flow: row;
+    height: 75%;
+}
+
+.left-panel{
+    color:white;
+    background:#232323;
+    width:500px;
+    overflow:auto;
+    min-width:500px;
+}
+.right-panel{
+    flex:auto;
+    background:white;
+    font-family: 'Open Sans', sans-serif;
+    overflow-y:auto;
+    overflow-wrap:break-word;
+}
+.bottom-panel{
+    background:#3c3c3c;
+    flex:auto;
+    color:white;
+    white-space:pre-line;
+    overflow-y:auto;
+    overflow-wrap:break-word;
+}
+#new-section{
+    background: #333333;
+    border: none;
+    height: 30px;
+    color: #949494;
+    cursor:pointer;
+}
+#new-section:hover{
+    background:#484747;
+}
