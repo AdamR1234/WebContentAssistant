@@ -8,7 +8,12 @@
 <body>
 
 <div class="flex-wrap">
-    <div class="toolbar"><button id="new-section" onclick="newSection()">Add Section</button> - Web Content Assistant by Adam Roe</div>
+
+    <div class="toolbar">
+        <button id="btn" onclick="newSection()">Add Section</button>
+        <button id="btn" onclick="featureToggle()">Add Features</button> - Web Content Assistant by Adam Roe
+    </div>
+
     <div class="row-flex">   
         <div class="left-panel">
             <div class="center-start"></div><div class="main-body"></div><div class="center-end"></div>
@@ -25,6 +30,23 @@
 </div>
 
 
+
+
+<div id="feature-contain">
+
+    <div class="feature-top">
+         <div class="feature-title">Features</div>
+         <div class="close" onclick="featureToggle()">✖</div>
+    </div>
+
+    <textarea id="features" placeholder="Place special features here"></textarea>
+    
+    <div id="bullets">Results will appear here</div>
+
+</div>
+
+
+<script src="bullet.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
