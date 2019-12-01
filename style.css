@@ -6,6 +6,7 @@ html,body{
     margin:0;
     height:100%;
     font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    overflow:hidden;
 }
 .toolbar{
     color:#9e9e9e;
@@ -78,7 +79,10 @@ html,body{
     padding:10px;
     display:inline-block;
     color:#cccccc;
+    width:430px;
+    cursor:all-scroll;
 }
+
 #features{
     width: -webkit-fill-available;
     height: 100px;
