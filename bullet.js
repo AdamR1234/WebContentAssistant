@@ -37,7 +37,43 @@ featureArray = "&bull; " + features.value.split(/\n/).join("<br />&bull; ")
         bullets.innerHTML = featureArray.replace(/  +/g, ' ');
  
     } 
-    
 
  
 })
+
+
+
+//Logic for moving the feature box.
+
+let moving = false;
+let x = 0;
+let y = 0;
+const featureContain = document.getElementsByClassName("feature-title")[0];
+
+featureContain.addEventListener("mousedown", e => {
+    moving = true;
+ 
+
+document.addEventListener("mousemove", e => {
+    x = e.pageX - 250;
+    y = e.pageY - 20;
+  
+    if(moving === true){
+       
+        document.getElementById("feature-contain").style.marginLeft = x + "px";
+        document.getElementById("feature-contain").style.marginTop = y + "px";
+    
+    }
+    
+    });
+
+});
+
+
+
+featureContain.addEventListener("mouseup", e => {
+    if(moving === true){
+         moving = false;
+    }
+    
+    })
