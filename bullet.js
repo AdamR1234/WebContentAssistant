@@ -53,8 +53,8 @@ const featureContain = document.getElementsByClassName("feature-title")[0];
 
 featureContain.addEventListener("mousedown", e => {
     movingBullet = true;
-    featureContain.style.zIndex = "1000";
-    titleContain.style.zIndex = "1";
+    document.getElementById("feature-contain").style.zIndex = "1000";
+    document.getElementById("title-contain").style.zIndex = "1";
 
 document.addEventListener("mousemove", e => {
     xBullet = e.pageX - 250;
