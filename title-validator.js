@@ -124,8 +124,8 @@ const titleContain = document.getElementsByClassName("title-title")[0];
 
 titleContain.addEventListener("mousedown", e => {
     movingTitle = true;
-    titleContain.style.zIndex = "1000";
-    featureContain.style.zIndex = "1";
+    document.getElementById("title-contain").style.zIndex = "1000";
+    document.getElementById("feature-contain").style.zIndex = "1";
 
 document.addEventListener("mousemove", e => {
     xTitle = e.pageX - 250;
