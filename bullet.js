@@ -45,23 +45,25 @@ featureArray = "&bull; " + features.value.split(/\n/).join("<br />&bull; ")
 
 //Logic for moving the feature box.
 
-let moving = false;
-let x = 0;
-let y = 0;
+let movingBullet = false;
+let xBullet = 0;
+let yBullet = 0;
 const featureContain = document.getElementsByClassName("feature-title")[0];
 
+
 featureContain.addEventListener("mousedown", e => {
-    moving = true;
- 
+    movingBullet = true;
+    featureContain.style.zIndex = "1000";
+    titleContain.style.zIndex = "1";
 
 document.addEventListener("mousemove", e => {
-    x = e.pageX - 250;
-    y = e.pageY - 20;
+    xBullet = e.pageX - 250;
+    yBullet = e.pageY - 20;
   
-    if(moving === true){
+    if(movingBullet === true){
        
-        document.getElementById("feature-contain").style.marginLeft = x + "px";
-        document.getElementById("feature-contain").style.marginTop = y + "px";
+        document.getElementById("feature-contain").style.marginLeft = xBullet + "px";
+        document.getElementById("feature-contain").style.marginTop = yBullet + "px";
     
     }
     
@@ -72,8 +74,9 @@ document.addEventListener("mousemove", e => {
 
 
 featureContain.addEventListener("mouseup", e => {
-    if(moving === true){
-         moving = false;
+    if(movingBullet === true){
+        movingBullet = false;
+    
     }
     
     })
