@@ -167,6 +167,7 @@ html,body{
     color: #c7c7c7;
     height: 40px;
     padding-left: 10px;
+    transition:0.2s;
 
 }
 #long{
@@ -178,6 +179,7 @@ html,body{
     color: #c7c7c7;
     height: 40px;
     padding-left: 10px;
+    transition:0.2s;
 }
 .long-count{
     color: #cccccc;
@@ -192,6 +194,7 @@ html,body{
     color:#cccccc;
     margin-left:10px;
     margin-top:10px;
+    margin-right:10px;
     word-break:break-word;
 }
 .long-title{
@@ -199,6 +202,7 @@ html,body{
     margin-left:10px;
     margin-top:10px;
     margin-bottom:10px;
+    margin-right:10px;
     word-break:break-word;
 }
 .short-status{
