@@ -34,18 +34,18 @@ document.getElementById("short").addEventListener("keyup", function(){
             if(shortCount.value.length < 1){
                 shortCount.style.backgroundColor = "#232323";
                 shortTitle.style.color = "#cccccc";
-                shortStatus.innerHTML = "Short Status: <span style='color:#71ff6f;'>Valid</span>";
+                shortStatus.innerHTML = "Short Status: <span style='color:#71ff6f;'>Good</span>";
                 document.getElementsByClassName("short-title")[0].innerHTML = "<Legend style='color:white;'>Short Title</Legend>Your short title will appear here.";
             }
             else if(shortCount.value.length <= 90){
                 shortCount.style.backgroundColor = "rgb(29, 82, 37)";
                 shortTitle.style.color = "#71ff6f";
-                shortStatus.innerHTML = "Short Status: <span style='color:#71ff6f;'>Valid</span>";
+                shortStatus.innerHTML = "Short Status: <span style='color:#71ff6f;'>Good</span>";
             }
             else {
                  shortCount.style.backgroundColor = "rgb(82, 29, 29)";
                  shortTitle.style.color = "#ff3030";
-                 shortStatus.innerHTML = "Short Status: <span style='color:#ff0000;'>Invalid</span>";
+                 shortStatus.innerHTML = "Short Status: <span style='color:#ff0000;'>Bad</span>";
             }
 
             if(shortCount.value.length > 200){
@@ -72,18 +72,18 @@ document.getElementById("long").addEventListener("keyup", function(){
         if(longCount.value.length < 1){
             longCount.style.backgroundColor = "#232323";
             longTitle.style.color = "#cccccc";
-            longStatus.innerHTML = "Long Status: <span style='color:#71ff6f;'>Valid</span>";
+            longStatus.innerHTML = "Long Status: <span style='color:#71ff6f;'>Good</span>";
             document.getElementsByClassName("long-title")[0].innerHTML = "<Legend style='color:white;'>Long Title</Legend>Your long title will appear here.";
         }
         else if(longCount.value.length <= 120){
             longCount.style.backgroundColor = "rgb(29, 82, 37)";
             longTitle.style.color = "#71ff6f";
-            longStatus.innerHTML = "Long Status: <span style='color:#71ff6f;'>Valid</span>";
+            longStatus.innerHTML = "Long Status: <span style='color:#71ff6f;'>Good</span>";
         }
         else {
             longCount.style.backgroundColor = "rgb(82, 29, 29)";
             longTitle.style.color = "#ff3030";
-            longStatus.innerHTML = "Long Status: <span style='color:#ff0000;'>Invalid</span>";
+            longStatus.innerHTML = "Long Status: <span style='color:#ff0000;'>Bad</span>";
         }
 
 
@@ -103,13 +103,13 @@ document.getElementById("long").addEventListener("keyup", function(){
      longCount.style.backgroundColor = "#232323";
      longTitle.style.color = "#cccccc";
      longTitle.innerHTML = "<Legend style='color:white;'>Long Title</Legend>Your long title will appear here.";
-     longStatus.innerHTML = "Long Status: <span style='color:#71ff6f;'>Valid</span>";
+     longStatus.innerHTML = "Long Status: <span style='color:#71ff6f;'>Good</span>";
      shortCount.value = "";
      document.getElementsByClassName("short-count")[0].innerHTML = "Short: 0";
      shortCount.style.backgroundColor = "#232323";
      shortTitle.style.color = "#cccccc";
      shortTitle.innerHTML = "<Legend style='color:white;'>Short Title</Legend>Your short title will appear here.";
-     shortStatus.innerHTML = "Short Status: <span style='color:#71ff6f;'>Valid</span>";
+     shortStatus.innerHTML = "Short Status: <span style='color:#71ff6f;'>Good</span>";
 
  }
  
