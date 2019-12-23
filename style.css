@@ -73,6 +73,7 @@ html,body{
     overflow:hidden;
     box-shadow: 3px 4px 5px black;
     display:none;
+    resize:horizontal;
 
 }
 .feature-title{
@@ -137,6 +138,7 @@ html,body{
     overflow:hidden;
     box-shadow: 3px 4px 5px black;
     display:none;
+    resize:horizontal;
 
 }
 .title-title{
