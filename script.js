@@ -74,7 +74,7 @@ content.style.color = "white";
 content.style.fontSize = "13px";
 
 // Experiment
- document.getElementById("title"+h3Count).addEventListener("mouseup",function(){
+ document.getElementById("title"+h3Count).addEventListener("focus",function(){
 
     rightElement.innerHTML = "<center><h3>" + title.value + "</h3>" + "<p style='padding: 0px; max-width:80%;font-size:13px;'>" + content.value.replace(/\n/g, "<br />") + "</p>";
     bottomElement.innerHTML = "&lt;h3 style='color: #000000; font-size: 18px; text-transform: none; font-weight: bold;'&gt;" + title.value + "&lt;/h3&gt;" + "&lt;p style='padding: 0px; max-width:80%;'&gt;" + content.value.replace(/\n/g, "<br />") + "&lt;/p&gt;";
