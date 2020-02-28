@@ -34,7 +34,7 @@ leftElement.innerHTML = "</br><span style='color:#757575;'>&lt;</span>\
 <span style='color:#89e1fd';> style</span>=\
 <span style='color:#d28a68'>'padding: 0px; max-width:80%;'</span>\
 <span style='color:#757575;'>&gt;</span></br></br>\
-<textarea oninput='this.style.height = \'\'; this.style.height = this.scrollHeight + \'px\';' placeholder='Enter Content Here' rows='4' cols='50' id='content"+contentCount+"'></textarea>\
+<textarea oninput="+ this.style.height = 'px'; this.style.height = this.scrollHeight + 'px'; +" placeholder='Enter Content Here' rows='4' cols='50' id='content"+contentCount+"'></textarea>\
 </br></br><span style='color:#757575;'>&lt;/</span>\
 <span style='color:#4a8acc;'>p</span>\
 <span style='color:#757575;'>&gt;</span>";
