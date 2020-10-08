@@ -27,7 +27,8 @@ var shortStatus = document.getElementsByClassName("short-status")[0];
 
 document.getElementById("short").addEventListener("keyup", function(){
 
-    document.getElementsByClassName("short-count")[0].innerHTML = "Short: " + shortCount.value.length;
+  
+    document.getElementsByClassName("short-count")[0].innerHTML = "Short: " + shortCount.value.replace(/ +/g, ' ').length;
     document.getElementsByClassName("short-title")[0].innerHTML = "<Legend style='color:white;'>Short Title</Legend>" + shortCount.value;
 
 
@@ -65,7 +66,7 @@ var longStatus = document.getElementsByClassName("long-status")[0];
 
 document.getElementById("long").addEventListener("keyup", function(){
 
-    document.getElementsByClassName("long-count")[0].innerHTML = "Long: " + longCount.value.length;
+    document.getElementsByClassName("long-count")[0].innerHTML = "Long: " + longCount.value.replace(/ +/g, ' ').length;
     document.getElementsByClassName("long-title")[0].innerHTML = "<Legend style='color:white;'>Long Title</Legend>" + longCount.value;
 
 
