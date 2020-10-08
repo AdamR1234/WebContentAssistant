@@ -61,7 +61,7 @@ html,body{
 #feature-contain{
     position:absolute;
     height:500px;
-    width:500px;
+    width:910px;
     z-index:100;
     background:#3e3e3e;
     margin:auto;
@@ -89,7 +89,6 @@ html,body{
     width: -webkit-fill-available;
     height: 100px;
     resize: none;
-    padding: inherit;
     margin: 10px;
     background: #232323;
     color: #b3b3b3;
