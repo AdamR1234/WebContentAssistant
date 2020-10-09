@@ -74,6 +74,10 @@ content.style.background = "#313131";
 content.style.color = "white";
 content.style.fontSize = "13px";
 
+
+
+
+
 // Experiment
 // Update - I don't know why this is an experiment.
 // Lesson learnt to comment properly.
@@ -94,11 +98,21 @@ document.getElementById("title"+h3Count).addEventListener("keyup",function(){
 });
 document.getElementById("content"+contentCount).addEventListener("keyup",function(){
     
-    bottom.style.fontSize = "1em";
-    rightElement.innerHTML = "<center><h3>" + title.value + "</h3>" + "<p style='padding: 0px; max-width:80%;font-size:13px;'>" + content.value.replace(/\n/g, "<br />").replace(/\[b]/g, "<b>").replace(/\[\/b]/g, "</b>") + "</p>";
-    bottomElement.innerHTML = "&lt;h3 style='color: #000000; font-size: 18px; text-transform: none; font-weight: bold;'&gt;" + title.value + "&lt;/h3&gt;" + "&lt;p style='padding: 0px; max-width:80%;'&gt;" + content.value.replace(/\n/g, "<br />").replace(/\[b]/g, "&lt;b>").replace(/\[\/b]/g, "&lt;/b>") + "&lt;/p&gt;";
+    var rightReplace = content.value.replace(/\n/g, "<br />")
+    .replace(/\[b]/g, "<b>")
+    .replace(/\[\/b]/g, "</b>")
+    .replace(/\[note]/g, "Please note:");
 
-    
+    var bottomReplace = content.value.replace(/\n/g, "<br />")
+                                    .replace(/\[b]/g, "&lt;b>")
+                                    .replace(/\[\/b]/g, "&lt;/b>")
+                                    .replace(/\[note]/g, "Please note:");
+                                    
+    bottom.style.fontSize = "1em";
+    rightElement.innerHTML = "<center><h3>" + title.value + "</h3>" + "<p style='padding: 0px; max-width:80%;font-size:13px;'>" + rightReplace + "</p>";
+    bottomElement.innerHTML = "&lt;h3 style='color: #000000; font-size: 18px; text-transform: none; font-weight: bold;'&gt;" + title.value + "&lt;/h3&gt;" + "&lt;p style='padding: 0px; max-width:80%;'&gt;" + bottomReplace + "&lt;/p&gt;";
+
+   
 
 });
 
