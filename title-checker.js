@@ -427,13 +427,13 @@ document.getElementById("long").addEventListener("keyup", function(){
 
  function nvidiaGPU(){
 
-    document.getElementById("long").value = "Gigabyte GeForce GTX 1660 Ti WINDFORCE OC 6GB GDDR6 VR Ready Graphics Card, 1536 Core, 1500MHz GPU, 1845MHz Boost";
+    document.getElementById("long").value = "MSI GeForce RTX 2080 Ti GAMING X TRIO 11GB GDDR6 Ray-Tracing Graphics Card, 4352 Core, 1350MHz GPU, 1755MHz Boost";
     document.getElementsByClassName("long-count")[0].innerHTML = "Long: " + longCount.value.replace(/ +/g, ' ').length;
-    document.getElementsByClassName("long-title")[0].innerHTML = "<Legend style='color:white;'>Long Title</Legend>Gigabyte GeForce GTX 1660 Ti WINDFORCE OC 6GB GDDR6 VR Ready Graphics Card, 1536 Core, 1500MHz GPU, 1845MHz Boost";
+    document.getElementsByClassName("long-title")[0].innerHTML = "<Legend style='color:white;'>Long Title</Legend>MSI GeForce RTX 2080 Ti GAMING X TRIO 11GB GDDR6 Ray-Tracing Graphics Card, 4352 Core, 1350MHz GPU, 1755MHz Boost";
     
 
-    document.getElementById("short").value = "Gigabyte NVIDIA GeForce GTX 1660 Ti 6GB WINDFORCE OC Turing Graphics Card";
-    document.getElementsByClassName("short-title")[0].innerHTML = "<Legend style='color:white;'>Short Title</Legend>Gigabyte NVIDIA GeForce GTX 1660 Ti 6GB WINDFORCE OC Turing Graphics Card";
+    document.getElementById("short").value = "MSI NVIDIA GeForce RTX 2080 Ti 11GB GAMING X TRIO Turing Graphics Card";
+    document.getElementsByClassName("short-title")[0].innerHTML = "<Legend style='color:white;'>Short Title</Legend>MSI NVIDIA GeForce RTX 2080 Ti 11GB GAMING X TRIO Turing Graphics Card";
     document.getElementsByClassName("short-count")[0].innerHTML = "Short: " + shortCount.value.replace(/ +/g, ' ').length;
 
     longStatus.innerHTML = "Long Status: <span style='color:#71ff6f;'>Good</span>";
