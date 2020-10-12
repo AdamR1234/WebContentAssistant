@@ -19,13 +19,17 @@ function newSection(){
 h3Count++;
 contentCount++;
 
+/* Explanation for the JS within the dynamically generated remove button:
+There are 3 instances of the same div id. 1 on the left panel, right panel and bottom panel.  
+When the button is executed, I've repeated the code 3 times so it removes each instance of the same div.  */
+
     var  leftElement = document.createElement("div");
 leftElement.innerHTML = "</br><span style='color:#757575;'>&lt;</span>\
 <span style='color:#4a8acc;'>h3</span>\
 <span style='color:#89e1fd;'> style</span>=\
 <span style='color:#d28a68;'>'color: #000000; font-size: 18px; text-transform: none; font-weight: bold;'</span>\
 <span style='color:#757575;'>&gt;</span></br>\
-<input type='text' id='title"+h3Count+"' placeholder='Enter Title'/>\
+<input type='text' id='title"+h3Count+"' placeholder='Enter Title'/ >\
 </br><span style='color:#757575;'>&lt;/</span>\
 <span style='color:#4a8acc;'>h3</span>\
 <span style='color:#757575;'>&gt;</span></br></br>\
@@ -33,22 +37,33 @@ leftElement.innerHTML = "</br><span style='color:#757575;'>&lt;</span>\
 <span style='color:#4a8acc;'>p</span>\
 <span style='color:#89e1fd';> style</span>=\
 <span style='color:#d28a68'>'padding: 0px; max-width:80%;'</span>\
-<span style='color:#757575;'>&gt;</span></br></br>\
+<span style='color:#757575;'>&gt;</span></br/br>\
 <textarea placeholder='Enter Content Here' rows='4' cols='50' id='content"+contentCount+"'></textarea>\
 </br></br><span style='color:#757575;'>&lt;/</span>\
 <span style='color:#4a8acc;'>p</span>\
-<span style='color:#757575;'>&gt;</span>";
+<span style='color:#757575;'>&gt;</span>\
+<button id='remove' onClick='document.getElementById(\"el"+h3Count+"\").parentNode.removeChild(document.getElementById(\"el"+h3Count+"\"));\
+document.getElementById(\"el"+h3Count+"\").parentNode.removeChild(document.getElementById(\"el"+h3Count+"\"));\
+document.getElementById(\"el"+h3Count+"\").parentNode.removeChild(document.getElementById(\"el"+h3Count+"\"));'>Delete Section</button>";
+leftElement.id = "el" + h3Count;
 leftElement.style.color = "white";
+leftElement.style.borderBottom = "solid #636363 1px";
+leftElement.style.paddingBottom = "25px";
+
+
+
 
 
 var left = document.getElementsByClassName("main-body")[0];
 left.appendChild(leftElement);
 
 var rightElement = document.createElement("div");
+rightElement.id = "el" + h3Count;
 var right = document.getElementsByClassName("right-panel")[0];
 right.appendChild(rightElement);
 
 var bottomElement = document.createElement("div");
+bottomElement.id = "el" + h3Count;
 var bottom = document.getElementsByClassName("bottom-panel-main")[0];
 bottom.appendChild(bottomElement);
 
