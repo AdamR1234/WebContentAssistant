@@ -449,7 +449,7 @@ document.getElementById("long").addEventListener("keyup", function(){
 let movingTitle = false;
 let xTitle = 0;
 let yTitle = 0;
-const titleContain = document.getElementsByClassName("title-title")[0];
+const titleContain = document.getElementsByClassName("title-top")[0];
 
 titleContain.addEventListener("mousedown", e => {
     movingTitle = true;
