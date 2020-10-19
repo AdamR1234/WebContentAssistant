@@ -28,7 +28,7 @@ document.getElementById("features").addEventListener("keyup", function(){
 
 // Add item to array upon producing a new line, then join the array
 // as a whole, changing the commas for a bullet point on each new line.
-featureArray = "&bull; " + features.value.split(/\n/).join(".<br />&bull; ")
+featureArray = "&bull; " + features.value.split(/\n/).join("<br />&bull; ")
 
 
     if(featureArray != null){
