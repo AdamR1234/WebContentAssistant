@@ -28,7 +28,7 @@ document.getElementById("features").addEventListener("keyup", function(){
 
 // Add item to array upon producing a new line, then join the array
 // as a whole, changing the commas for a bullet point on each new line.
-featureArray = "&bull; " + features.value.split(/\n/).join("<br />&bull; ")
+featureArray = "&bull; " + features.value.split(/\n/).join(".<br />&bull; ")
 
 
     if(featureArray != null){
@@ -48,7 +48,7 @@ featureArray = "&bull; " + features.value.split(/\n/).join("<br />&bull; ")
 let movingBullet = false;
 let xBullet = 0;
 let yBullet = 0;
-const featureContain = document.getElementsByClassName("feature-title")[0];
+const featureContain = document.getElementsByClassName("feature-top")[0];
 
 
 featureContain.addEventListener("mousedown", e => {
