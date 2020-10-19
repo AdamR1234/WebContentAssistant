@@ -145,3 +145,77 @@ document.getElementById("content"+contentCount).addEventListener("keyup",functio
 
 }
 
+
+
+// Dragbar
+
+let leftResize = false;
+let xLeft = 0;
+
+const leftContain = document.getElementsByClassName("left-drag")[0];
+
+leftContain.addEventListener("mousedown", e => {
+    leftResize = true;
+
+
+document.addEventListener("mousemove", e => {
+    xLeft = e.pageX;
+  
+  
+    if(leftResize === true){
+       
+        document.getElementsByClassName("left-panel")[0].style.width = xLeft + "px";
+        document.body.style.cursor = "ew-resize";
+    
+    }
+    
+    });
+
+});
+
+
+
+document.body.addEventListener("mouseup", e => {
+    if(leftResize === true){
+        leftResize = false;
+        document.body.style.cursor = "initial";
+    }
+    
+    })
+
+
+let bottomResize = false;
+let xBottom = 0;
+
+const bottomContain = document.getElementsByClassName("bottom-drag")[0];
+
+bottomContain.addEventListener("mousedown", e => {
+    bottomResize = true;
+
+
+document.addEventListener("mousemove", e => {
+    xBottom = e.pageY - 50;
+  
+  
+    if(bottomResize === true){
+       
+        document.getElementsByClassName("row-flex")[0].style.height = xBottom + "px";
+        document.body.style.cursor = "ns-resize";
+      
+    
+    }
+    
+    });
+
+});
+
+
+
+document.body.addEventListener("mouseup", e => {
+    if(bottomResize === true){
+        bottomResize = false;
+        document.body.style.cursor = "initial";
+        console.log(e.pageY);
+    }
+
+})
