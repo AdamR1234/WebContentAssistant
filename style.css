@@ -31,7 +31,7 @@ html,body{
 
 .left-drag{
     height:100%;
-    width:10px;
+    min-width:10px;
     cursor:ew-resize;
     background:#4a4a4a;
     float:right;
