@@ -83,6 +83,7 @@ title.style.color = "white";
 content.style.paddingLeft = "10px";
 content.style.margin = "15px";
 content.style.overflow = "hidden";
+content.style.resize = "vertical";
 content.style.width = "-webkit-fill-available";
 content.style.border = "none";
 content.style.background = "#313131";
