@@ -226,5 +226,6 @@ function clipBoard() {
     range.selectNode(document.getElementsByClassName("bottom-panel")[0]);
     window.getSelection().removeAllRanges(); // clear current selection
     window.getSelection().addRange(range); // to select text
+    document.execCommand("copy"); //copy selection
 
 }
