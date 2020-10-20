@@ -83,7 +83,7 @@ html,body{
 .left-panel{
     color:white;
     background:#232323;
-    width:500px;
+    min-width:500px;
     overflow:auto;
     
 }
