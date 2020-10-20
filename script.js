@@ -1,278 +1,231 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+var centerstart = "<span style='color:#757575;'>&lt;</span><span style='color:red;'>center</span><span style='color:#757575;'>&gt;</span>";
+var centerend = "</br><span style='color:#757575;'>&lt;/</span><span style='color:red;'>center</span><span style='color:#757575;'>&gt;</span></br>";
+var centerstartbottom = "&lt;center&gt;";
+var centerendbottom = "&lt;/center&gt;";       
+ 
+document.getElementsByClassName("center-start")[0].innerHTML = centerstart;
+document.getElementsByClassName("center-end")[0].innerHTML = centerend;
+document.getElementsByClassName("center-start-bottom")[0].innerHTML = centerstartbottom;
+document.getElementsByClassName("center-end-bottom")[0].innerHTML = centerendbottom;
 
-html,body{
-    background:#1d1d1d;
-    padding:0;
-    margin:0;
-    height:100%;
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-    overflow:hidden;
-}
 
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #a2a2a2;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #696969;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
 
-.left-drag{
-    height:100%;
-    min-width:10px;
-    cursor:ew-resize;
-    background:#4a4a4a;
-    float:right;
-}
-.left-drag:hover{
-   background:#7d7d7d
-}
+var h3Count = 0;
+var contentCount = 0;
 
-.bottom-drag{
-    width:100%;
-    min-height:10px;
-    background:#4a4a4a;
-    cursor:ns-resize;
-}
-.bottom-drag:hover{
-    background:#7d7d7d;
- }
 
-#remove{
-    float: right;
-    background: #4a4a4a;
-    border: none;
-    height: 30px;
-    color: #afafaf;
-    cursor: pointer;
-    transition: 0.2s;
-    margin-right: 15px;
-}
-#remove:hover{
-    background: #333333;
-}
+function newSection(){
 
-.toolbar{
-    color:#9e9e9e;
-    padding:5px;
-}
-.flex-wrap{
-    display: flex;
-    flex-flow:column;
-    height:100%;
-}
+h3Count++;
+contentCount++;
 
-.row-flex{
-    display:flex;
-    flex-flow: row;
-    height: 75%;
-}
+/* Explanation for the JS within the dynamically generated remove button:
+There are 3 instances of the same div id. 1 on the left panel, right panel and bottom panel.  
+When the button is executed, I've repeated the code 3 times so it removes each instance of the same div.  */
 
-.left-panel{
-    color:white;
-    background:#232323;
-    width:500px;
-    overflow:auto;
+    var  leftElement = document.createElement("div");
+leftElement.innerHTML = "</br><span style='color:#757575;'>&lt;</span>\
+<span style='color:#4a8acc;'>h3</span>\
+<span style='color:#89e1fd;'> style</span>=\
+<span style='color:#d28a68;'>'color: #000000; font-size: 18px; text-transform: none; font-weight: bold;'</span>\
+<span style='color:#757575;'>&gt;</span></br>\
+<input type='text' id='title"+h3Count+"' placeholder='Enter Title'/ >\
+</br><span style='color:#757575;'>&lt;/</span>\
+<span style='color:#4a8acc;'>h3</span>\
+<span style='color:#757575;'>&gt;</span></br></br>\
+<span style='color:#757575;'>&lt;</span>\
+<span style='color:#4a8acc;'>p</span>\
+<span style='color:#89e1fd';> style</span>=\
+<span style='color:#d28a68'>'padding: 0px; max-width:80%;'</span>\
+<span style='color:#757575;'>&gt;</span></br/br>\
+<textarea placeholder='Enter Content Here' rows='4' cols='50' id='content"+contentCount+"'></textarea>\
+</br></br><span style='color:#757575;'>&lt;/</span>\
+<span style='color:#4a8acc;'>p</span>\
+<span style='color:#757575;'>&gt;</span>\
+<button id='remove' onClick='document.getElementById(\"el"+h3Count+"\").parentNode.removeChild(document.getElementById(\"el"+h3Count+"\"));\
+document.getElementById(\"el"+h3Count+"\").parentNode.removeChild(document.getElementById(\"el"+h3Count+"\"));\
+document.getElementById(\"el"+h3Count+"\").parentNode.removeChild(document.getElementById(\"el"+h3Count+"\"));'>Delete Section</button>";
+leftElement.id = "el" + h3Count;
+leftElement.style.color = "white";
+leftElement.style.borderBottom = "solid #636363 1px";
+leftElement.style.paddingBottom = "25px";
+
+
+
+
+
+var left = document.getElementsByClassName("main-body")[0];
+left.appendChild(leftElement);
+
+var rightElement = document.createElement("div");
+rightElement.id = "el" + h3Count;
+var right = document.getElementsByClassName("right-panel")[0];
+right.appendChild(rightElement);
+
+var bottomElement = document.createElement("div");
+bottomElement.id = "el" + h3Count;
+var bottom = document.getElementsByClassName("bottom-panel-main")[0];
+bottom.appendChild(bottomElement);
+
+var title = document.getElementById("title"+h3Count);
+var content = document.getElementById("content"+contentCount);
+
+
+title.style.paddingLeft = "10px";
+title.style.margin = "15px";
+title.style.overflow = "hidden";
+title.style.width = "-webkit-fill-available";
+title.style.border = "none";
+title.style.height = "50px";
+title.style.background = "#313131";
+title.style.color = "white";
+
+content.style.paddingLeft = "10px";
+content.style.margin = "15px";
+content.style.overflow = "hidden";
+content.style.width = "-webkit-fill-available";
+content.style.border = "none";
+content.style.background = "#313131";
+content.style.color = "white";
+content.style.fontSize = "13px";
+
+
+
+
+
+// Experiment
+// Update - I don't know why this is an experiment.
+// Lesson learnt to comment properly.
+ document.getElementsByClassName("bottom-panel")[0].addEventListener("mouseenter",function(){
+
+
+    var rightReplace = content.value.replace(/\n/g, "<br />")
+    .replace(/\[b]/g, "<b>")
+    .replace(/\[\/b]/g, "</b>")
+    .replace(/\[note]/g, "Please note:");
+
+    var bottomReplace = content.value.replace(/\n/g, "<br />")
+                                    .replace(/\[b]/g, "&lt;b>")
+                                    .replace(/\[\/b]/g, "&lt;/b>")
+                                    .replace(/\[note]/g, "Please note:");
+
+
+    rightElement.innerHTML = "<center><h3>" + title.value + "</h3>" + "<p style='padding: 0px; max-width:80%;font-size:13px;'>" + rightReplace + "</p>";
+    bottomElement.innerHTML = "&lt;h3 style='color: #000000; font-size: 18px; text-transform: none; font-weight: bold;'&gt;" + title.value + "&lt;/h3&gt;" + "&lt;p style='padding: 0px; max-width:80%;'&gt;" + bottomReplace + "&lt;/p&gt;";
+
+});
+ // ######
+
+
+document.getElementById("title"+h3Count).addEventListener("keyup",function(){
+
+    rightElement.innerHTML = "<center><h3>" + title.value + "</h3>" + "<p style='padding: 0px; max-width:80%;font-size:13px;'>" + content.value.replace(/\n/g, "<br />") + "</p>";
+    bottomElement.innerHTML = "&lt;h3 style='color: #000000; font-size: 18px; text-transform: none; font-weight: bold;'&gt;" + title.value + "&lt;/h3&gt;" + "&lt;p style='padding: 0px; max-width:80%;'&gt;" + content.value.replace(/\n/g, "<br />") + "&lt;/p&gt;";
+
+});
+document.getElementById("content"+contentCount).addEventListener("keyup",function(){
     
-}
-.right-panel{
-    flex:auto;
-    background:white;
-    font-family: 'Open Sans', sans-serif;
-    width:min-content;
-    overflow-y:auto;
-    overflow-wrap:break-word;
-}
-.bottom-panel{
-    background:#3c3c3c;
-    flex:auto;
-    color:white;
-    white-space:pre-line;
-    overflow-y:auto;
-    overflow-wrap:break-word;
-}
-#btn{
-    background: #4a4a4a;
-    border: none;
-    height: 30px;
-    color: #cccccc;
-    cursor: pointer;
-    transition:0.2s;
-}
-#btn:hover{
-    background:#333333;
-}
+    var rightReplace = content.value.replace(/\n/g, "<br />")
+    .replace(/\[b]/g, "<b>")
+    .replace(/\[\/b]/g, "</b>")
+    .replace(/\[note]/g, "Please note:");
 
-#feature-contain{
-    position:absolute;
-    height:500px;
-    width:910px;
-    z-index:100;
-    background:#3e3e3e;
-    margin:auto;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    overflow:hidden;
-    box-shadow: 3px 4px 5px black;
-    display:none;
-    resize:horizontal;
-    min-width:500px;
+    var bottomReplace = content.value.replace(/\n/g, "<br />")
+                                    .replace(/\[b]/g, "&lt;b>")
+                                    .replace(/\[\/b]/g, "&lt;/b>")
+                                    .replace(/\[note]/g, "Please note:");
+                                    
+    bottom.style.fontSize = "1em";
+    rightElement.innerHTML = "<center><h3>" + title.value + "</h3>" + "<p style='padding: 0px; max-width:80%;font-size:13px;'>" + rightReplace + "</p>";
+    bottomElement.innerHTML = "&lt;h3 style='color: #000000; font-size: 18px; text-transform: none; font-weight: bold;'&gt;" + title.value + "&lt;/h3&gt;" + "&lt;p style='padding: 0px; max-width:80%;'&gt;" + bottomReplace + "&lt;/p&gt;";
 
-}
-.feature-top{
-    cursor:all-scroll;
-}
-.feature-title{
-    padding:10px;
-    display:inline-block;
-    color:#cccccc;
-}
-
-#features{
-    width: -webkit-fill-available;
-    height: 100px;
-    resize: none;
-    margin: 10px;
-    background: #232323;
-    color: #b3b3b3;
-    border: none;
-}
-
-#bullets{
-    display: block;
-    overflow-y: auto;
-    height: 315px;
-    background: #ffffff;
-    margin: 10px;
-    color: #000000;
-    text-align: center;
-    font-size: 13px;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.close{
-    color: #cccccc;
-    float: right;
-    padding: 5px;
-    text-align: center;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: 0.2s;
-    width: 15px;
    
-}
-.close:hover{
-    transform: rotate(360deg);
-   
-}
 
-
-#title-contain{
-    position:absolute;
-    height: fit-content;
-    width:930px;
-    z-index:100;
-    background:#3e3e3e;
-    margin:auto;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    overflow:hidden;
-    box-shadow: 3px 4px 5px black;
-    display:none;
-    resize:horizontal;
-    min-width:500px;
-
-}
-.title-top{
-    cursor:all-scroll;
-}
-.title-title{
-    padding:10px;
-    display:inline-block;
-    color:#cccccc;
+});
 
 }
 
-#titles{
-    width: -webkit-fill-available;
-    height: 100px;
-    resize: none;
-    padding: inherit;
-    margin: 10px;
-    background: #232323;
-    color: #b3b3b3;
-    border: none;
-}
 
-#short{
-    display: block;
-    margin: 10px;
-    width: -webkit-fill-available;
-    border: none;
-    background: #232323;
-    color: #c7c7c7;
-    height: 40px;
-    padding-left: 10px;
-    transition:0.2s;
+
+// Dragbar
+
+let leftResize = false;
+let xLeft = 0;
+
+const leftContain = document.getElementsByClassName("left-drag")[0];
+
+leftContain.addEventListener("mousedown", e => {
+    leftResize = true;
+
+
+document.addEventListener("mousemove", e => {
+    xLeft = e.pageX;
+  
+  
+    if(leftResize === true){
+       
+        document.getElementsByClassName("left-panel")[0].style.width = xLeft + "px";
+        document.body.style.cursor = "ew-resize";
+    
+    }
+    
+    });
+
+});
+
+
+
+document.body.addEventListener("mouseup", e => {
+    if(leftResize === true){
+        leftResize = false;
+        document.body.style.cursor = "initial";
+    }
+    
+    })
+
+
+let bottomResize = false;
+let xBottom = 0;
+
+const bottomContain = document.getElementsByClassName("bottom-drag")[0];
+
+bottomContain.addEventListener("mousedown", e => {
+    bottomResize = true;
+
+
+document.addEventListener("mousemove", e => {
+    xBottom = e.pageY - 50;
+  
+  
+    if(bottomResize === true){
+       
+        document.getElementsByClassName("row-flex")[0].style.height = xBottom + "px";
+        document.body.style.cursor = "ns-resize";
+      
+    
+    }
+    
+    });
+
+});
+
+
+
+document.body.addEventListener("mouseup", e => {
+    if(bottomResize === true){
+        bottomResize = false;
+        document.body.style.cursor = "initial";
+        console.log(e.pageY);
+    }
+
+})
+
+
+function clipBoard() {
+    var range = document.createRange();
+    range.selectNode(document.getElementsByClassName("bottom-panel")[0]);
+    window.getSelection().removeAllRanges(); // clear current selection
+    window.getSelection().addRange(range); // to select text
+    document.execCommand("copy"); //copy selection
 
 }
-#long{
-    display: block;
-    margin: 10px;
-    width: -webkit-fill-available;
-    border: none;
-    background: #232323;
-    color: #c7c7c7;
-    height: 40px;
-    padding-left: 10px;
-    transition:0.2s;
-}
-.long-count{
-    color: #cccccc;
-    margin-left: 10px;
-}
-.short-count{
-    color: #cccccc;
-    margin-left: 10px;
-    margin-top:20px;
-}
-.short-title{
-    color:#cccccc;
-    margin-left:10px;
-    margin-top:10px;
-    margin-right:10px;
-    word-break:break-word;
-}
-.long-title{
-    color:#cccccc;
-    margin-left:10px;
-    margin-top:10px;
-    margin-bottom:10px;
-    margin-right:10px;
-    word-break:break-word;
-}
-.short-status{
-    margin-left:10px;
-    margin-bottom:10px;
-}
-.long-status{
-    margin-left:10px;
-    margin-bottom:20px;
-}
-
