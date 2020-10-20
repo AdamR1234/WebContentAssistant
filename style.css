@@ -83,7 +83,7 @@ html,body{
 .left-panel{
     color:white;
     background:#232323;
-    min-width:500px;
+    width:500px;
     overflow:auto;
     
 }
@@ -91,6 +91,7 @@ html,body{
     flex:auto;
     background:white;
     font-family: 'Open Sans', sans-serif;
+    width:min-content;
     overflow-y:auto;
     overflow-wrap:break-word;
 }
