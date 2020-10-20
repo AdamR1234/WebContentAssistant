@@ -164,7 +164,7 @@ document.addEventListener("mousemove", e => {
   
     if(leftResize === true){
        
-        document.getElementsByClassName("left-panel")[0].style.width = xLeft + "px";
+        document.getElementsByClassName("left-panel")[0].style.minWidth = xLeft + "px";
         document.body.style.cursor = "ew-resize";
     
     }
