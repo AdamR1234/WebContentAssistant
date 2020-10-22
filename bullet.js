@@ -81,4 +81,41 @@ featureContain.addEventListener("mouseup", e => {
     
     })
 
+
     
+    function copyBulletsCenter() {
+  
+        var botStart = document.getElementById("bullets");
+        var botEnd = botStart = document.getElementById("bullets");
+        var centerStart = document.createTextNode("<center>");
+        var centerEnd = document.createTextNode("</center>");
+        
+        
+        botStart.prepend(centerStart);
+        botEnd.append(centerEnd);
+        
+            var range = document.createRange();
+            range.selectNode(document.getElementById("bullets"));
+            window.getSelection().removeAllRanges(); // clear current selection
+            window.getSelection().addRange(range); // to select text
+            document.execCommand("copy"); //copy selection
+            window.getSelection().removeAllRanges();
+        
+     
+        botStart.removeChild(centerStart);
+        botEnd.removeChild(centerEnd);
+        
+        }
+
+        function copyBullets() {
+  
+            
+                var range = document.createRange();
+                range.selectNode(document.getElementById("bullets"));
+                window.getSelection().removeAllRanges(); // clear current selection
+                window.getSelection().addRange(range); // to select text
+                document.execCommand("copy"); //copy selection
+                window.getSelection().removeAllRanges();
+            
+       
+            }
