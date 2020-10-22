@@ -13,7 +13,9 @@
         <button id="btn" onclick="newSection()">Add Section</button>
         <button id="btn" onclick="featureToggle()">Add Features</button>
         <button id="btn" onclick="titleToggle()">Title Checker</button>
-        <button id="btn" onclick="clipBoard()">Copy All Output</button>
+        - 
+        <button id="btn-cpy" onclick="mainCopy()">Copy Code</button>
+        <button id="btn-cpy" onclick="mainCopyCenter()">Copy Code with Center Tags</button>
          - Web Content Assistant by <a href="https://uk.linkedin.com/in/adam-roe-608893136" target="_blank" style="color:#7a78ff;">Adam Roe</a>
     </div>
 
@@ -48,7 +50,10 @@
     </div>
 
     <textarea id="features" placeholder="Insert features here &#10;&#10;Example&#10;Example&#10;Example"></textarea>
-    
+
+    <button id="btn-cpy" style="margin-left:10px;" onclick="copyBullets()">Copy</button>
+    <button id="btn-cpy"  onclick="copyBulletsCenter()">Copy with Center Tags</button>
+
     <div id="bullets">Results will appear here</div>
 
 </div>
