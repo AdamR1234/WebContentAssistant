@@ -9,7 +9,6 @@ document.getElementsByClassName("center-start-bottom")[0].innerHTML = centerstar
 document.getElementsByClassName("center-end-bottom")[0].innerHTML = centerendbottom;
 
 
-
 var h3Count = 0;
 var contentCount = 0;
 
@@ -19,9 +18,12 @@ function newSection(){
 h3Count++;
 contentCount++;
 
-/* Explanation for the JS within the dynamically generated remove button:
+/* Explanation for the code within the dynamically generated remove button:
 There are 3 instances of the same div id. 1 on the left panel, right panel and bottom panel.  
 When the button is executed, I've repeated the code 3 times so it removes each instance of the same div.  */
+
+
+/* Unless 100% sure what the below code does, DO NOT touch */
 
     var  leftElement = document.createElement("div");
 leftElement.innerHTML = "</br><span style='color:#757575;'>&lt;</span>\
@@ -64,8 +66,11 @@ right.appendChild(rightElement);
 
 var bottomElement = document.createElement("div");
 bottomElement.id = "el" + h3Count;
+bottomElement.className = "bottom-el";
 var bottom = document.getElementsByClassName("bottom-panel-main")[0];
 bottom.appendChild(bottomElement);
+
+
 
 var title = document.getElementById("title"+h3Count);
 var content = document.getElementById("content"+contentCount);
@@ -126,6 +131,8 @@ document.getElementById("title"+h3Count).addEventListener("keyup",function(){
 });
 document.getElementById("content"+contentCount).addEventListener("keyup",function(){
     
+
+
     var rightReplace = content.value.replace(/\n/g, "<br />")
     .replace(/\[b]/g, "<b>")
     .replace(/\[\/b]/g, "</b>")
@@ -140,7 +147,9 @@ document.getElementById("content"+contentCount).addEventListener("keyup",functio
     rightElement.innerHTML = "<center><h3>" + title.value + "</h3>" + "<p style='padding: 0px; max-width:80%;font-size:13px;'>" + rightReplace + "</p>";
     bottomElement.innerHTML = "&lt;h3 style='color: #000000; font-size: 18px; text-transform: none; font-weight: bold;'&gt;" + title.value + "&lt;/h3&gt;" + "&lt;p style='padding: 0px; max-width:80%;'&gt;" + bottomReplace + "&lt;/p&gt;";
 
-   
+
+
+    
 
 });
 
@@ -216,17 +225,31 @@ document.body.addEventListener("mouseup", e => {
     if(bottomResize === true){
         bottomResize = false;
         document.body.style.cursor = "initial";
-        console.log(e.pageY);
+        
     }
 
 })
 
 
 function clipBoard() {
+  
+var botStart = document.getElementsByClassName("bottom-el")[0];
+var botEnd = document.querySelectorAll(".bottom-el:last-child")[0];
+var centerStart = document.createTextNode("<center>");
+var centerEnd = document.createTextNode("</center>");
+
+
+botStart.prepend(centerStart);
+botEnd.append(centerEnd);
+
     var range = document.createRange();
-    range.selectNode(document.getElementsByClassName("bottom-panel")[0]);
+    range.selectNode(document.getElementsByClassName("bottom-panel-main")[0]);
     window.getSelection().removeAllRanges(); // clear current selection
     window.getSelection().addRange(range); // to select text
     document.execCommand("copy"); //copy selection
+    window.getSelection().removeAllRanges();
+
+botStart.removeChild(centerStart);
+botEnd.removeChild(centerEnd);
 
 }
