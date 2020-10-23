@@ -231,7 +231,7 @@ document.body.addEventListener("mouseup", e => {
 })
 
 
-function mainCopyCenter() {
+function mainCopy() {
   
 var botStart = document.getElementsByClassName("bottom-el")[0];
 var botEnd = document.querySelectorAll(".bottom-el:last-child")[0];
@@ -253,15 +253,3 @@ botStart.removeChild(centerStart);
 botEnd.removeChild(centerEnd);
 
 }
-
-function mainCopy() {
-  
-        var range = document.createRange();
-        range.selectNode(document.getElementsByClassName("bottom-panel-main")[0]);
-        window.getSelection().removeAllRanges(); // clear current selection
-        window.getSelection().addRange(range); // to select text
-        document.execCommand("copy"); //copy selection
-        window.getSelection().removeAllRanges();
-
-    
-    }
