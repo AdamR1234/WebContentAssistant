@@ -115,17 +115,7 @@ html,body{
 #btn:hover{
     background:#333333;
 }
-#btn-cpy{
-    background: #31652d;
-    border: none;
-    height: 30px;
-    color: #cccccc;
-    cursor: pointer;
-    transition:0.2s;
-}
-#btn-cpy:hover{
-    background:#204a1c;
-}
+
 #feature-contain{
     position:absolute;
     height: 535px;
