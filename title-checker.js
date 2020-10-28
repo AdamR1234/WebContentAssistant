@@ -28,7 +28,7 @@ var shortStatus = document.getElementsByClassName("short-status")[0];
 
 document.getElementById("short").addEventListener("keyup", function(){
 
-  
+   shortCount.value = shortCount.value.replace(/ +/g, ' ');
     document.getElementsByClassName("short-count")[0].innerHTML = "Short: " + shortCount.value.replace(/ +/g, ' ').length;
     document.getElementsByClassName("short-title")[0].innerHTML = "<Legend style='color:white;'>Short Title</Legend>" + shortCount.value;
 
@@ -62,12 +62,13 @@ document.getElementById("short").addEventListener("keyup", function(){
 
 
 var longCount =  document.getElementById("long");
+
 var longTitle = document.getElementsByClassName("long-title")[0];
 var longStatus = document.getElementsByClassName("long-status")[0];
 
 document.getElementById("long").addEventListener("keyup", function(){
 
-   
+    longCount.value = longCount.value.replace(/ +/g, ' ');
     document.getElementsByClassName("long-count")[0].innerHTML = "Long: " + longCount.value.replace(/ +/g, ' ').length;
     document.getElementsByClassName("long-title")[0].innerHTML = "<Legend style='color:white;'>Long Title</Legend>" + longCount.value;
 
@@ -479,3 +480,5 @@ titleContain.addEventListener("mouseup", e => {
     }
     
     })
+
+
