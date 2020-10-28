@@ -210,6 +210,20 @@ html,body{
 
 }
 
+#error{
+    width: 80%;
+    height: 80%;
+    background: #af0000;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align:center;
+    display:none;
+}
+
 #titles{
     width: -webkit-fill-available;
     height: 100px;
@@ -220,7 +234,11 @@ html,body{
     color: #b3b3b3;
     border: none;
 }
-
+.error-message{
+    display:table-cell;
+    vertical-align: middle;
+    color: white;
+}
 #short{
     display: block;
     margin: 10px;
