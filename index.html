@@ -13,9 +13,11 @@
         <button id="btn" onclick="newSection()">Add Section</button>
         <button id="btn" onclick="featureToggle()">Add Features</button>
         <button id="btn" onclick="titleToggle()">Title Checker</button>
-        - 
+        -  
         <button id="btn" onclick="mainCopy()">Copy Code</button>
+        <button id="btn" onclick="helpMenu()" style="background:#029600;">Help</button>
          - Web Content Assistant by <a href="https://uk.linkedin.com/in/adam-roe-608893136" target="_blank" style="color:#7a78ff;">Adam Roe</a>
+        
     </div>
 
     <div class="row-flex">   
@@ -65,8 +67,8 @@
     </div>
 
 
-        <input type="text" id="short" placeholder="Insert Short Title (Less/Equal to 90 letters)" />
-        <input type="text" id="long" placeholder="Insert Long Title (Less/Equal to 120 letters)" />
+        <input type="text" id="short" placeholder="Insert Short Title (Less/Equal to 90 letters)" maxlength="90"/>
+        <input type="text" id="long" placeholder="Insert Long Title (Less/Equal to 120 letters)" maxlength="120"/>
 
 
         <div class="short-count" style="color:#cccccc;">Short: </div>
@@ -108,6 +110,113 @@
             <button id="btn" style="margin:10px;" onclick="nvidiaGPU()">NVIDIA GPU</button>
             <button id="btn" style="margin:10px;" onclick="PSU()">PSU</button>
         </fieldset>
+</div>
+
+<div id="help-contain">
+    <div class="close" onclick="helpToggle()">✖</div>
+
+    <ul id="myUL">
+
+        <h2 style="text-decoration:underline; text-align:center;font-weight:normal;">Tips</h3>
+
+
+        <li><span class="caret">Bold Styling</span>
+                
+            <ul class="nested">
+                    <li style="color:#5e93b9;">Placing square bracketed open and closed [b] [/b] tags either side of text will output bold text.<br /><br />
+                    <span style="color:#a9a9a9;display:block;">Usage: <code style="color: #a9a9a9;background: #505050;padding: 5px;">[b] Hello [/b]</code></span>
+                    <span style="color:#a9a9a9;">Output: <p style="background: #ffffff;color:#000000;font-weight:bold;display:inline-block;padding:5px;">Hello</p></span></li>
+            </ul>
+        </li>
+     
+
+        <li><span class="caret">Please note:</span>
+         
+            <ul class="nested">
+                    <li style="color:#5e93b9;">Typing [note] will generate a "Please note: ".<br /><br />
+                    <span style="color:#a9a9a9;display:block;">Usage: <code style="color: #a9a9a9;background: #505050;padding: 5px;">[note]</code></span>
+                    <span style="color:#a9a9a9;">Output: <p style="background: #ffffff;color:#000000;;display:inline-block;padding:5px;">Please note: </p></span></li>
+            </ul>
+        </li>
+
+
+<h2 style="text-decoration:underline; text-align:center;font-weight:normal;">Usage</h3>
+
+        <li><span class="caret">Add Section Button</span>
+         
+            <ul class="nested">
+                <li style="color:#5e93b9;">Situated on the top tool bar, this generates a title and content text box in the left panel. Type/paste content into the fields to display live content on the right panel, and code in the bottom panel.</li>
+                
+                <li><span class="caret">Delete Section Button</span>
+                    <ul class="nested">
+                        <li style="color:#9e9e9e;">Generated on each section, this simply deletes the section.</li>
+                     </ul>
+                </li>
+
+            </ul>
+        </li>
+
+
+        <li><span class="caret">Add Features Button</span>
+         
+            <ul class="nested">
+                <li style="color:#5e93b9;">Situated on the top tool bar, this opens a feature panel. Type/paste features into the text box to generate a list of bullets that can be copied. Enter presses also generate a bullet on the list.</li>
+
+                
+                <li><span class="caret">Copy Button</span>
+                    <ul class="nested">
+                        <li style="color:#9e9e9e;">Copies the generated list of bullets.</li>
+                     </ul>
+                </li>
+
+                <li><span class="caret">Copy with Center Tags Button</span>
+                    <ul class="nested">
+                        <li style="color:#9e9e9e;">Copies the generated list of bullets with inline open/close center tags at the beginning and end of the bulleted list.</li>
+                     </ul>
+                </li>
+
+            </ul>
+        </li>
+
+
+        <li><span class="caret">Title Checker Button</span>
+         
+            <ul class="nested">
+                <li style="color:#5e93b9;">Situated on the top tool bar, this opens a title checker panel. Type/paste features into the short and long text boxes to count the list of characters in the titles.<br /><br />
+                This automatically removes multiple spaces, resulting in a well formatted title.</li>
+
+                <li><span class="caret">Clear Titles Button</span>
+                    <ul class="nested">
+                        <li style="color:#9e9e9e;">Clears the titles from the text boxes, resetting the character count to 0.</li>
+                     </ul>
+                </li>
+
+                <li><span class="caret">Template Buttons</span>
+                    <ul class="nested">
+                        <li style="color:#9e9e9e;">Produces a short and long template example of an existing product to encourage uniform titling.</li>
+                     </ul>
+                </li>
+                
+
+            </ul>
+        </li>
+
+
+        <li><span class="caret">Copy Code Button</span>
+         
+            <ul class="nested">
+                <li style="color:#5e93b9;">Situated on the top tool bar, this copies the generated code with inline open/close center tags at the beginning and end of the code.
+
+             </ul>
+
+        </li>
+
+
+
+    </ul>
+</ul>
+    
+
 </div>
 
 
