@@ -177,7 +177,7 @@ html,body{
    
 }
 .close:hover{
-    transform: rotate(360deg);
+   color:red;
    
 }
 
@@ -198,7 +198,29 @@ html,body{
     display:none;
     resize:horizontal;
     min-width:500px;
+    
 
+}
+
+#help-contain{
+    position: absolute;
+    height: fit-content;
+    max-height: 700px;
+    width: 750px;
+    z-index: 100;
+    background: #3e3e3e;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    box-shadow: 3px 4px 5px black;
+    min-width: 500px;
+    color: white;
+    padding: 10px;
+    overflow-y: auto;
+    display:none;
 }
 .title-top{
     cursor:all-scroll;
@@ -222,6 +244,7 @@ html,body{
     margin: auto;
     text-align:center;
     display:none;
+    z-index:1000;
 }
 
 #titles{
@@ -295,3 +318,51 @@ html,body{
     margin-bottom:20px;
 }
 
+
+
+/* Tree */
+
+
+ul, #myUL {
+    list-style-type: none;
+  }
+  li{
+
+    padding:10px;
+  }
+
+
+
+  #myUL {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .caret {
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+  }
+  
+  .caret::before {
+    content: "\25B6";
+    color:  white;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  
+  .caret-down::before {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */
+    transform: rotate(90deg);  
+  }
+  
+  .nested {
+    display: none;
+  }
+  
+  .active {
+    display: block;
+  }
